@@ -8,6 +8,7 @@ import Blogs from './Component/Blogs/Blogs'
 import BuyProduct from './Component/Buyer/BuyProduct'
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from './Component/Footer'
 
 function App() {
   const [product,setProduct] =useState([])
@@ -81,6 +82,10 @@ function App() {
             <BuyProduct fvtItem={fvtItem} totalPrice={totalPrice} handleDelete={handleDelete}></BuyProduct>
           </div>
     </div>
+   </div>
+
+   <div>
+    <Footer/>
    </div>
    
    </>
