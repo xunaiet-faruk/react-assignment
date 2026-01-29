@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphone",
+        "img": "https://i.ibb.co.com/21fD8vpb/Bid1-min.png",
+        "price": 120,
+        "time": "2 Days"
+    },
+    {
+        "id": 2,
+        "name": "Smart Watch",
+        "img": "https://i.ibb.co.com/yH9F40m/Bid2-min.png",
+        "price": 80,
+        "time": "3 Days"
+    },
+    {
+        "id": 3,
+        "name": "Bluetooth Speaker",
+        "img": "https://i.ibb.co.com/CpPfyHxK/Bid3-min.png",
+        "price": 60,
+        "time": "1 Day"
+    },
+    {
+        "id": 4,
+        "name": "Gaming Mouse",
+        "img": "https://i.ibb.co.com/r2ftfgpc/Bid4-min.png",
+        "price": 25,
+        "time": "2 Days"
+    },
+    {
+        "id": 5,
+        "name": "Mechanical Keyboard",
+        "img": "https://i.ibb.co.com/WNfjLYm4/Bid5-min.png",
+        "price": 90,
+        "time": "4 Days"
+    },
+    {
+        "id": 6,
+        "name": "Power Bank 20000mAh",
+        "img": "https://i.ibb.co.com/LD9HXHRw/Bid6-min.png",
+        "price": 45,
+        "time": "2 Days"
+    },
+    {
+        "id": 7,
+        "name": "USB-C Charger",
+        "img": "https://i.ibb.co.com/q3Y4jxZG/Bid7-min.png",
+        "price": 20,
+        "time": "1 Day"
+    },
+    {
+        "id": 8,
+        "name": "Laptop Cooling Pad",
+        "img": "https://i.ibb.co.com/21fD8vpb/Bid1-min.png",
+        "price": 35,
+        "time": "3 Days"
+    }
+]
