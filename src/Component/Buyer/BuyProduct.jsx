@@ -2,8 +2,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineCancel } from "react-icons/md";
 
 
-const BuyProduct = ({ fvtItem, totalPrice }) => {
-console.log("hellow",fvtItem);
+const BuyProduct = ({ fvtItem, totalPrice, handleDelete }) => {
+console.log("hellow",handleDelete);
 
     return (
         <div className="mb-12">
@@ -35,7 +35,7 @@ console.log("hellow",fvtItem);
                                     <p>{item.time}</p>
                                 </div>
                                 <div>
-                                    <MdOutlineCancel className="text-2xl hover:text-red-500"/>
+                                    <MdOutlineCancel onClick={() => handleDelete(item.id)} className="text-2xl hover:text-red-500"/>
 
                                 </div>
                             </div>

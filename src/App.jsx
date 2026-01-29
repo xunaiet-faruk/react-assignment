@@ -6,10 +6,16 @@ import Navbar from './Component/Navbar/Navbar'
 import Banner from './Component/Banner/Banner'
 import Blogs from './Component/Blogs/Blogs'
 import BuyProduct from './Component/Buyer/BuyProduct'
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [product,setProduct] =useState([])
-  const [fvtItem,setItem] =useState([])
+  const [fvtItem,setItem] =useState([]);
+ const [deleted,setDeleted] =useState([])
+
+
+
   useEffect(()=>{
 
     fetch('product.json')
@@ -19,8 +25,24 @@ function App() {
   
   },[])
 
-  const handleFvt =(item) =>{
-    setItem([...fvtItem,item])
+  const handleFvt = (item) => {
+    setItem([...fvtItem, item])
+
+    toast("Your Fvt Product Added", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+      transition: Bounce,
+    })
+  }
+
+  const handleDelete =(id) =>{
+    const EachProduct =fvtItem.filter(item => item.id !== id )
+    setItem(EachProduct)
   }
 
   const totalPrice =fvtItem.reduce((sum,total) => sum + total.price,0)
@@ -29,6 +51,20 @@ function App() {
    <>
    
    <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+
     <Navbar>
 
     </Navbar>
@@ -42,7 +78,7 @@ function App() {
           </div>
 
           <div className='mt-40 w-[30%]'>
-            <BuyProduct fvtItem={fvtItem} totalPrice={totalPrice}></BuyProduct>
+            <BuyProduct fvtItem={fvtItem} totalPrice={totalPrice} handleDelete={handleDelete}></BuyProduct>
           </div>
     </div>
    </div>
