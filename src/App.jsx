@@ -5,9 +5,11 @@ import './App.css'
 import Navbar from './Component/Navbar/Navbar'
 import Banner from './Component/Banner/Banner'
 import Blogs from './Component/Blogs/Blogs'
+import BuyProduct from './Component/Buyer/BuyProduct'
 
 function App() {
   const [product,setProduct] =useState([])
+  const [fvtItem,setItem] =useState([])
   useEffect(()=>{
 
     fetch('product.json')
@@ -16,6 +18,12 @@ function App() {
 
   
   },[])
+
+  const handleFvt =(item) =>{
+    setItem([...fvtItem,item])
+  }
+
+  const totalPrice =fvtItem.reduce((sum,total) => sum + total.price,0)
 
   return (
    <>
@@ -27,10 +35,16 @@ function App() {
 
         <Banner></Banner>
 
+      <div className='flex '>
 
-        <div>
-          <Blogs product={product}/>
-        </div>
+          <div className='w-[70%]'>
+            <Blogs product={product} handleFvt={handleFvt}/>
+          </div>
+
+          <div className='mt-40 w-[30%]'>
+            <BuyProduct fvtItem={fvtItem} totalPrice={totalPrice}></BuyProduct>
+          </div>
+    </div>
    </div>
    
    </>

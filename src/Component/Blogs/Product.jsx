@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 
-const Product = ({ item }) => {
+const Product = ({ item, handleFvt }) => {
     const { name, img, price, time } = item;
 
     return (
@@ -31,7 +31,7 @@ const Product = ({ item }) => {
             <td>{time}</td>
 
             <th>
-                <button className="btn btn-ghost "><FaRegHeart className='text-xl'/></button>
+                <FaRegHeart onClick={() =>handleFvt(item)} className='text-xl'/>
             </th>
         </tr>
     );
